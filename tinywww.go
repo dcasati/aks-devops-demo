@@ -11,7 +11,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
     if err != nil {
         panic(err)
     }
-    fmt.Fprintf(w, "Hello from %s!", myname)
+    fmt.Fprintf(w, "Hello BCIT from %s!", myname)
 }
 
 func main() {
