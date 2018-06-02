@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: aks-devops-demo
+  name: aks-devops-demo
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: aks-devops-demo
+  template:
+    metadata:
+      labels:
+        run: aks-devops-demo
+    spec:
+      containers:
+      - image: bcit85f5.azurecr.io/bcit:v1
+        imagePullPolicy: Always
+        name: aks-devops-demo
