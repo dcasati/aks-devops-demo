@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: aks-devops-demo
+  name: aks-devops-demo
+  namespace: default
+spec:
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 30202
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    run: aks-devops-demo
+  sessionAffinity: None
+  type: LoadBalancer
